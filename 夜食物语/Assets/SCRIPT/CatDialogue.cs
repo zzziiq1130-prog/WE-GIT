@@ -1,17 +1,29 @@
 using UnityEngine;
 
+// 定义四只猫的类型
+public enum CatType { Ramen, Burger, Dessert, Octopus }
+
 public class CatDialogue : MonoBehaviour
 {
-    public GameObject fixedDialogueUI; // 你图里的第一个槽位
-    public DialogueManager dialogueManager; // 你图里的第二个槽位
-
+    public CatType currentCat; // 在 Inspector 面板下拉选择这只猫的身份
+    public DialogueManager dialogueManager;
     public RamenPlotController plotController;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            plotController.StartStory();
+            // 告诉控制器当前对话的小猫是谁
+            plotController.currentTalkingCat = currentCat;
+
+            // 根据身份启动初始剧情
+            switch (currentCat)
+            {
+                case CatType.Ramen: plotController.StartStory(); break;
+                case CatType.Burger: plotController.StartBurgerStory(); break;
+                case CatType.Dessert: plotController.StartDessertStory(); break;
+                case CatType.Octopus: plotController.StartOctopusStory(); break;
+            }
         }
     }
 
@@ -19,7 +31,6 @@ public class CatDialogue : MonoBehaviour
     {
         if (other.CompareTag("Player") || other.GetComponent<CharacterController>() != null)
         {
-            // 离开时通过面板直接关闭
             dialogueManager.dialoguePanel.SetActive(false);
             dialogueManager.optionsPanel.SetActive(false);
         }

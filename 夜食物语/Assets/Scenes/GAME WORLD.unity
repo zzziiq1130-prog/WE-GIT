@@ -341,8 +341,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -745,7 +745,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1790969652}
         m_TargetAssemblyTypeName: RamenPlotController, Assembly-CSharp
-        m_MethodName: OnSelectOption3
+        m_MethodName: OnClickOption3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -775,8 +775,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 043c654b0efc6b246a88cbc40350d3f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1172,8 +1172,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1388,7 +1388,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1790969652}
         m_TargetAssemblyTypeName: RamenPlotController, Assembly-CSharp
-        m_MethodName: OnSelectOption4
+        m_MethodName: OnClickOption4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1418,8 +1418,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 043c654b0efc6b246a88cbc40350d3f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1733,6 +1733,47 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4061171007554771340, guid: dd137b5fa6dc4184cb96db0bba993e71, type: 3}
+--- !u!1 &340885288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3be573616cab2e54497be1a03c51a644, type: 3}
+  m_PrefabInstance: {fileID: 995443235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &340885290
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340885288}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &340885291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340885288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6159d0d2c77a1dc4d812c124af61eaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCat: 1
+  dialogueManager: {fileID: 1790969650}
+  plotController: {fileID: 1790969652}
 --- !u!1 &346140121 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5197686801833899117, guid: dd137b5fa6dc4184cb96db0bba993e71, type: 3}
@@ -2058,8 +2099,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2399,7 +2440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &493235057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3269,7 +3310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
-  rotateSpeed: 90
+  rotateSpeed: 2.5
   speedThreshold: 0.1
   jumpHeight: 0.39
 --- !u!143 &722252186
@@ -4393,7 +4434,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3be573616cab2e54497be1a03c51a644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 340885291}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3be573616cab2e54497be1a03c51a644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 340885290}
   m_SourcePrefab: {fileID: 100100000, guid: 3be573616cab2e54497be1a03c51a644, type: 3}
 --- !u!1 &1012163835 stripped
 GameObject:
@@ -4547,7 +4594,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e9b44406b8dab40a402c7d17779b19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1907935022}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e9b44406b8dab40a402c7d17779b19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1907935021}
   m_SourcePrefab: {fileID: 100100000, guid: 37e9b44406b8dab40a402c7d17779b19, type: 3}
 --- !u!1 &1047728614
 GameObject:
@@ -6753,6 +6806,47 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6967243096342349675, guid: dd137b5fa6dc4184cb96db0bba993e71, type: 3}
+--- !u!1 &1274921648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0fa9e086b83a12d4a9efb9fc3d6cd36a, type: 3}
+  m_PrefabInstance: {fileID: 1861217711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1274921650
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274921648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.67
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1274921651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274921648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6159d0d2c77a1dc4d812c124af61eaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCat: 2
+  dialogueManager: {fileID: 1790969650}
+  plotController: {fileID: 1790969652}
 --- !u!1 &1278242147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5887916859460360942, guid: f9c11c212145f9a4cb4c2e3cd4fc08ae, type: 3}
@@ -7014,7 +7108,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1790969652}
         m_TargetAssemblyTypeName: RamenPlotController, Assembly-CSharp
-        m_MethodName: OnSelectOption1
+        m_MethodName: OnClickOption1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7044,8 +7138,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 043c654b0efc6b246a88cbc40350d3f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7146,8 +7240,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7441,15 +7535,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2001060122578762586, guid: f9c11c212145f9a4cb4c2e3cd4fc08ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.19
+      value: -8.102
       objectReference: {fileID: 0}
     - target: {fileID: 2001060122578762586, guid: f9c11c212145f9a4cb4c2e3cd4fc08ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 2001060122578762586, guid: f9c11c212145f9a4cb4c2e3cd4fc08ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.79
+      value: 2.325
       objectReference: {fileID: 0}
     - target: {fileID: 2001060122578762586, guid: f9c11c212145f9a4cb4c2e3cd4fc08ae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8655,6 +8749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dm: {fileID: 1790969650}
+  currentTalkingCat: 0
 --- !u!1 &1797998927 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8003393125769676168, guid: dd137b5fa6dc4184cb96db0bba993e71, type: 3}
@@ -9013,7 +9108,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0fa9e086b83a12d4a9efb9fc3d6cd36a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1274921651}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0fa9e086b83a12d4a9efb9fc3d6cd36a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1274921650}
   m_SourcePrefab: {fileID: 100100000, guid: 0fa9e086b83a12d4a9efb9fc3d6cd36a, type: 3}
 --- !u!1 &1862564976
 GameObject:
@@ -9254,6 +9355,47 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6111050774512333045, guid: dd137b5fa6dc4184cb96db0bba993e71, type: 3}
+--- !u!1 &1907935019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e9b44406b8dab40a402c7d17779b19, type: 3}
+  m_PrefabInstance: {fileID: 1025648542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1907935021
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907935019}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.23
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1907935022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907935019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6159d0d2c77a1dc4d812c124af61eaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCat: 3
+  dialogueManager: {fileID: 1790969650}
+  plotController: {fileID: 1790969652}
 --- !u!1 &1914224205 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6368686082274467125, guid: dd137b5fa6dc4184cb96db0bba993e71, type: 3}
@@ -9325,7 +9467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6159d0d2c77a1dc4d812c124af61eaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedDialogueUI: {fileID: 1790969649}
+  currentCat: 0
   dialogueManager: {fileID: 1790969650}
   plotController: {fileID: 1790969652}
 --- !u!135 &1925820249
@@ -10242,7 +10384,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1790969652}
         m_TargetAssemblyTypeName: RamenPlotController, Assembly-CSharp
-        m_MethodName: OnSelectOption2
+        m_MethodName: OnClickOption2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10272,8 +10414,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 043c654b0efc6b246a88cbc40350d3f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

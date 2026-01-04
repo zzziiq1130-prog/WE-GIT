@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("移动设置")]
-    public float moveSpeed = 3.5f; // 走路速度
+    public float moveSpeed = 10f; // 走路速度
     public float rotateSpeed = 3f; // 转向速度
     public float speedThreshold = 0.1f; // 动画切换阈值
 
@@ -45,8 +45,24 @@ public class PlayerMovement : MonoBehaviour
             _controller.Move(move.normalized * moveSpeed * Time.deltaTime);
 
             // 【补回这部分】处理人物转向：让小人面向移动的方向
-            Quaternion targetRotation = Quaternion.LookRotation(move);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3f * Time.deltaTime);
+            if (move.magnitude > 0.1f)
+            {
+                // 执行移动
+                _controller.Move(move.normalized * moveSpeed * Time.deltaTime);
+
+                // --- 修复转向太快/乱转的问题 ---
+                // 1. 确定目标朝向（仅保留水平方向，防止人物抬头或低头）
+                Vector3 lookDir = new Vector3(move.x, 0, move.z);
+
+                if (lookDir != Vector3.zero)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(lookDir);
+
+                    // 2. 使用你定义的 rotateSpeed 变量，而不是硬编码的 3f
+                    // 建议在 Inspector 面板中将 rotateSpeed 调为 5 到 10 之间尝试
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+                }
+            }
         }
 
         // 3. 【新增】跳跃逻辑
