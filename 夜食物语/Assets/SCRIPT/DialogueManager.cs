@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject optionsPanel;       // 拖入存放 4 个按钮的父物体
 
     [Header("打字机设置")]
-    public float typingSpeed = 0.05f;     // 字跳出的速度
+    public float typingSpeed = 0.1f;     // 字跳出的速度
 
     private Coroutine typingCoroutine;
     private bool isTyping = false;
@@ -59,4 +59,25 @@ public class DialogueManager : MonoBehaviour
             isTyping = false;
         }
     }
+    // 在现有变量定义处添加
+    [Header("按钮文字引用")]
+    public TextMeshProUGUI[] buttonTexts; // 请在 Inspector 中依次拖入 4 个按钮下的 Text(TMP)
+
+    // 新增：更新按钮显示内容的方法
+    public void UpdateOptions(string[] options)
+    {
+        for (int i = 0; i < buttonTexts.Length; i++)
+        {
+            if (i < options.Length)
+            {
+                buttonTexts[i].text = options[i]; // 修改按钮显示的文字
+                buttonTexts[i].transform.parent.gameObject.SetActive(true); // 显示有内容的按钮
+            }
+            else
+            {
+                buttonTexts[i].transform.parent.gameObject.SetActive(false); // 隐藏多余的按钮
+            }
+        }
+    }
+
 }

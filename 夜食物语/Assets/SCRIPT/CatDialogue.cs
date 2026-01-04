@@ -2,24 +2,26 @@ using UnityEngine;
 
 public class CatDialogue : MonoBehaviour
 {
-    // 拖入你 Canvas 里的那个固定位置的 Image 物体
-    public GameObject fixedDialogueUI;
+    public GameObject fixedDialogueUI; // 你图里的第一个槽位
+    public DialogueManager dialogueManager; // 你图里的第二个槽位
+
+    public RamenPlotController plotController;
 
     private void OnTriggerEnter(Collider other)
     {
-        // 当玩家靠近猫咪
-        if (other.CompareTag("Player") || other.GetComponent<CharacterController>() != null)
+        if (other.CompareTag("Player"))
         {
-            fixedDialogueUI.SetActive(true); // 激活屏幕上的固定对话框
+            plotController.StartStory();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // 当玩家离开猫咪
         if (other.CompareTag("Player") || other.GetComponent<CharacterController>() != null)
         {
-            fixedDialogueUI.SetActive(false); // 隐藏对话框
+            // 离开时通过面板直接关闭
+            dialogueManager.dialoguePanel.SetActive(false);
+            dialogueManager.optionsPanel.SetActive(false);
         }
     }
 }
