@@ -25,4 +25,14 @@ public class PlayerScore : MonoBehaviour
             scoreText.text = "金币: " + currentScore;
         }
     }
+    public bool SpendCoins(int amount)
+    {
+        if (currentScore >= amount)
+        {
+            currentScore -= amount;
+            UpdateScoreUI();
+            return true; // 钱够，扣费成功
+        }
+        return false; // 钱不够
+    }
 }

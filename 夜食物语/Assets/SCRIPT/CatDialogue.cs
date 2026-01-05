@@ -19,7 +19,7 @@ public class CatDialogue : MonoBehaviour
             // 根据身份启动初始剧情
             switch (currentCat)
             {
-                case CatType.Ramen: plotController.StartStory(); break;
+                case CatType.Ramen: plotController.StartRamenStory(); break;
                 case CatType.Burger: plotController.StartBurgerStory(); break;
                 case CatType.Dessert: plotController.StartDessertStory(); break;
                 case CatType.Octopus: plotController.StartOctopusStory(); break;
